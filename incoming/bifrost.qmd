@@ -1,0 +1,6 @@
+---
+title: "Approximate nearest-neighbor search as implemented in Bifrost"
+date: 2026-09-02
+---
+
+Bifrost is a Rust library for approximate k-nearest-neighbor search over unit-normalized `f32` vectors.
