@@ -1,1 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 280"></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 280" width="820" height="280" role="img" aria-labelledby="title desc">
+  <title id="title">v3 .hnsw file layout</title>
+  <desc id="desc">Little-endian sections: 64-byte header, packed f32 vectors, 12-byte node records, then two u32 tables and a flat edge payload. CRC-32 covers everything after the header.</desc>
+  <style>
+    .label { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 12px; fill: #111; }
+    .tiny { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 10px; fill: #444; }
+    .title { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 14px; fill: #111; font-weight: 600; }
+  </style>
+  <rect width="820" height="280" fill="#fafafa"/>
+  <text class="title" x="24" y="28">.hnsw v3, little-endian, magic 0x484E5357 ("HNSW")</text>
+
+  <!-- stacked bars -->
+  <rect x="24" y="48" width="120" height="48" fill="#1f4e79"/>
+  <text class="label" x="36" y="70" fill="#fff">header 64 B</text>
+  <text class="tiny" x="36" y="86" fill="#dbe9f6">CRC in reserved[0..4]</text>
+
+  <rect x="144" y="48" width="170" height="48" fill="#2e86ab"/>
+  <text class="label" x="156" y="70" fill="#fff">vectors</text>
+  <text class="tiny" x="156" y="86" fill="#eaf6fb">n * dim * 4 bytes, f32</text>
+
+  <rect x="314" y="48" width="150" height="48" fill="#3b8c6e"/>
+  <text class="label" x="326" y="70" fill="#fff">nodes</text>
+  <text class="tiny" x="326" y="86" fill="#e9f6ef">n * 12 bytes</text>
+
+  <rect x="464" y="48" width="110" height="48" fill="#c47b2b"/>
+  <text class="label" x="476" y="70" fill="#fff">edge offs</text>
+  <text class="tiny" x="476" y="86" fill="#fff8ec">u32 table</text>
+
+  <rect x="574" y="48" width="110" height="48" fill="#c45c26"/>
+  <text class="label" x="586" y="70" fill="#fff">edge lens</text>
+  <text class="tiny" x="586" y="86" fill="#fff8ec">u32 table</text>
+
+  <rect x="684" y="48" width="112" height="48" fill="#8e3b46"/>
+  <text class="label" x="696" y="70" fill="#fff">edges</text>
+  <text class="tiny" x="696" y="86" fill="#fdecee">u32 payload</text>
+
+  <text class="tiny" x="24" y="118">CRC-32 (crc32fast) hashes bytes[64..]. Header fields at 0..38 are outside the hash. Version 2 files get a new header and the same body.</text>
+
+  <text class="label" x="24" y="150">64-byte header</text>
+  <text class="tiny" x="24" y="168">0 magic u32   4 version u16   6 dim u16   8 node_count u32   12 m u8   13 pad   14 ef_construction u16   16 ef_search u16</text>
+  <text class="tiny" x="24" y="184">18 max_level u8   19..23 pad   24 level_mult f64 bits   32 entry_point u32   36 entry_level u8   37 layer_count u8   38 reserved[24], CRC in first 4</text>
+
+  <text class="label" x="24" y="214">12-byte node</text>
+  <text class="tiny" x="24" y="232">0 external_id u32   4 level u8   5..7 pad   8 vector_offset u32 (in f32 elements, not bytes)</text>
+  <text class="tiny" x="24" y="252">Edge tables are layer-major: slot = level * node_count + node. Offsets are indices into the edge payload. Lists are sorted and unique.</text>
+</svg>
