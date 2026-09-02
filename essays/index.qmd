@@ -1,0 +1,25 @@
+---
+title: Essays
+pagetitle: Essays · Continuous Deformation
+toc: false
+listing:
+  id: essays
+  contents:
+    - "*/index.qmd"
+  sort: "date desc"
+  type: default
+  sort-ui: false
+  filter-ui: false
+  categories: numbered
+  fields: [date, title, description, reading-time, categories]
+  date-format: long
+  feed:
+    type: partial
+    title: "Continuous Deformation — Essays"
+    description: "Essays from Continuous Deformation."
+---
+
+Longer pieces. The first is on approximate nearest-neighbor search as implemented in Bifrost.
+
+::: {#essays}
+:::

@@ -1,0 +1,18 @@
+---
+title: Explorations
+pagetitle: Explorations · Continuous Deformation
+toc: false
+include-after-body:
+  - text: |
+      <script type="module" src="/js/explorations.js"></script>
+---
+
+Interactive figures will live here: browser-side drawings in the spirit of circuits notebooks, mounted into an otherwise static page.
+
+Until the first one is wired up, this page is the hook. The mount point below is empty on purpose. With JavaScript off, the fallback sentence is the whole page. With JavaScript on, `js/explorations.js` looks for `data-exploration` and loads a module when one exists.
+
+::: {#exploration-root .exploration data-exploration="none"}
+::: {.exploration-fallback}
+No live exploration is mounted. This page stays readable if JavaScript is off.
+:::
+:::

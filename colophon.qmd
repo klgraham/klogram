@@ -1,0 +1,15 @@
+---
+title: Colophon
+pagetitle: Colophon · Continuous Deformation
+toc: false
+---
+
+**Continuous Deformation** is a Quarto website published from [klgraham/klogram](https://github.com/klgraham/klogram) to GitHub Pages. The custom domain is [klogram.dev](https://klogram.dev). This repository is the site; it does not publish through the old `klgraham.github.io` user pages.
+
+Body type is [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4) at 21px / 1.65, measure about 65–72 characters, column about 42rem. UI type is [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3). Code is [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono). Mathematics is KaTeX. Diagrams in essays may be Mermaid or SVG.
+
+Light paper is `#f6f1e8`, ink `#1c1916`, meta `#6b6560`, accent `#2f4a6e`. Dark paper is `#161412`, ink `#ece6dc`, accent `#8aa0c4`. The theme starts from Quarto's litera and is restyled so the page reads as a sheet, not a Bootstrap blog.
+
+Essays carry a citation / BibTeX block at the end so a piece can be cited without leaving the page. There is no comment system and no analytics on this first version.
+
+The first essay, *Approximate nearest-neighbor search as implemented in Bifrost*, is written against [klgraham/bifrost](https://github.com/klgraham/bifrost) `main` at `3945cbc`.

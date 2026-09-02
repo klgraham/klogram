@@ -1,0 +1,20 @@
+---
+title: Notes
+pagetitle: Notes · Continuous Deformation
+toc: false
+listing:
+  id: notes
+  contents:
+    - "*/index.qmd"
+  sort: "date desc"
+  type: default
+  sort-ui: false
+  filter-ui: false
+  fields: [date, title, description]
+  date-format: long
+---
+
+Shorter pieces than essays. Nothing here yet.
+
+::: {#notes}
+:::

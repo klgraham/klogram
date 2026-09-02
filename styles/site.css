@@ -1,0 +1,463 @@
+/* Continuous Deformation — restyle litera into an essay sheet. */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: var(--cd-paper);
+  color: var(--cd-ink);
+  font-family: "Source Serif 4", "Source Serif Pro", "Iowan Old Style", Palatino, serif;
+}
+
+/* UI chrome: sans */
+#quarto-header,
+.navbar,
+.navbar-brand,
+.nav-link,
+.nav-footer,
+.quarto-title-meta,
+.quarto-title-meta-heading,
+.quarto-title-meta-contents,
+.listing-actions-group,
+.quarto-category,
+.toc-title,
+#toc-title,
+nav[role="doc-toc"],
+.page-menu,
+.quarto-listing-category,
+.citation-block,
+.empty-state,
+.catalog-meta,
+.colophon-meta {
+  font-family: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
+}
+
+.navbar {
+  background: var(--cd-paper) !important;
+  border-bottom: 1px solid var(--cd-rule);
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  box-shadow: none !important;
+}
+
+.navbar-brand {
+  font-family: "Source Serif 4", serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  color: var(--cd-ink) !important;
+}
+
+.navbar .nav-link {
+  color: var(--cd-meta) !important;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .nav-link.active {
+  color: var(--cd-ink) !important;
+}
+
+.navbar .navbar-nav .nav-item {
+  margin-left: 0.35rem;
+}
+
+/* One column, essay measure */
+#quarto-content,
+.page-columns .content {
+  background: transparent;
+}
+
+#quarto-document-content,
+main.content,
+.quarto-container {
+  max-width: 42rem;
+}
+
+#quarto-document-content {
+  font-size: 1.3125rem; /* 21px at 16px root */
+  line-height: 1.65;
+}
+
+#quarto-document-content p,
+#quarto-document-content li {
+  max-width: 70ch;
+}
+
+#quarto-document-content h1,
+#quarto-document-content h2,
+#quarto-document-content h3,
+#quarto-document-content h4 {
+  font-family: "Source Serif 4", serif;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--cd-ink);
+  line-height: 1.25;
+}
+
+#quarto-document-content h1 {
+  font-size: 2rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.6rem;
+}
+
+#quarto-document-content h2 {
+  font-size: 1.45rem;
+  margin-top: 2.2rem;
+  padding-top: 0.4rem;
+  border-top: 0;
+}
+
+#quarto-document-content h3 {
+  font-size: 1.2rem;
+  margin-top: 1.6rem;
+}
+
+/* Homepage: catalog, not a splash */
+.catalog-lede {
+  margin: 0 0 2.4rem;
+}
+
+.catalog-lede .site-sentence {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  max-width: 38rem;
+  color: var(--cd-ink);
+  margin: 0;
+}
+
+.catalog-section-head {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cd-meta);
+  margin: 2.4rem 0 0.8rem;
+  border-top: 1px solid var(--cd-rule);
+  padding-top: 1.1rem;
+}
+
+.empty-state {
+  color: var(--cd-meta);
+  font-size: 1rem;
+  line-height: 1.55;
+  margin: 0 0 0.4rem;
+}
+
+/* Kill stock listing chrome */
+.listing-actions-group,
+.quarto-listing-sort,
+.quarto-listing-filter,
+.listing-pagination {
+  display: none !important;
+}
+
+.quarto-listing {
+  padding: 0;
+}
+
+.quarto-listing .listing-item,
+.quarto-listing-default .listing-item {
+  border: 0;
+  border-bottom: 1px solid var(--cd-rule);
+  padding: 1.15rem 0 1.2rem;
+  margin: 0;
+  background: transparent;
+}
+
+.quarto-listing .listing-item:last-child {
+  border-bottom: 0;
+}
+
+.quarto-listing .listing-item-container,
+.quarto-listing-default .listing-item-container {
+  display: block;
+}
+
+.quarto-listing .listing-item-image,
+.quarto-listing-default .listing-item-image {
+  display: none;
+}
+
+.quarto-listing .listing-date,
+.quarto-listing .listing-author,
+.quarto-listing .listing-reading-time,
+.quarto-listing .listing-categories {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.82rem;
+  color: var(--cd-meta);
+  text-transform: none;
+}
+
+.quarto-listing .listing-title {
+  font-family: "Source Serif 4", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0.15rem 0 0.35rem;
+}
+
+.quarto-listing .listing-title a {
+  color: var(--cd-ink);
+  text-decoration: none;
+}
+
+.quarto-listing .listing-title a:hover {
+  color: var(--cd-accent);
+}
+
+.quarto-listing .listing-description {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--cd-ink);
+  max-width: 68ch;
+  margin: 0;
+}
+
+.quarto-listing .listing-categories .quarto-category {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0 0.6rem 0 0;
+  color: var(--cd-meta);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Essay header */
+.quarto-title-banner,
+.quarto-title-block .quarto-title-banner {
+  background: transparent !important;
+  padding: 0;
+}
+
+header.quarto-title-block {
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--cd-rule);
+}
+
+header.quarto-title-block .title {
+  font-size: 2.05rem;
+  line-height: 1.22;
+}
+
+.quarto-title-meta,
+.quarto-title-meta-contents a {
+  color: var(--cd-meta);
+  font-size: 0.88rem;
+}
+
+.quarto-categories .quarto-category {
+  background: transparent;
+  border: 1px solid var(--cd-rule);
+  border-radius: 0;
+  color: var(--cd-meta);
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.45rem;
+}
+
+/* Body toc sits in the column */
+#toc-header,
+.toc-title,
+#toc-title {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cd-meta);
+  font-weight: 600;
+}
+
+#TOC,
+nav[role="doc-toc"] {
+  border-left: 0;
+  font-size: 0.92rem;
+  margin: 0 0 2rem;
+}
+
+#TOC a,
+nav[role="doc-toc"] a {
+  color: var(--cd-meta);
+  text-decoration: none;
+}
+
+#TOC a:hover,
+nav[role="doc-toc"] a:hover,
+#TOC a.active,
+nav[role="doc-toc"] a.active {
+  color: var(--cd-ink);
+}
+
+/* Code */
+pre,
+code {
+  font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+#quarto-document-content pre.sourceCode,
+#quarto-document-content div.sourceCode {
+  background: var(--cd-wash);
+  border: 1px solid var(--cd-rule);
+  border-radius: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+#quarto-document-content :not(pre) > code {
+  background: var(--cd-wash);
+  color: var(--cd-code);
+  font-size: 0.82em;
+  padding: 0.08em 0.28em;
+  border-radius: 0;
+}
+
+/* Figures, tables, mermaid */
+#quarto-document-content figure,
+#quarto-document-content .figure,
+#quarto-document-content .quarto-figure {
+  margin: 1.8rem 0;
+}
+
+#quarto-document-content img,
+#quarto-document-content svg,
+#quarto-document-content .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+#quarto-document-content table {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+#quarto-document-content table th,
+#quarto-document-content table td {
+  border-color: var(--cd-rule);
+  padding: 0.4rem 0.55rem;
+}
+
+#quarto-document-content table thead th {
+  font-weight: 600;
+  color: var(--cd-ink);
+}
+
+/* Citation end matter */
+.citation-block {
+  margin-top: 3rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--cd-rule);
+}
+
+.citation-block h2 {
+  font-family: "Source Sans 3", sans-serif !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cd-meta);
+  margin-top: 0 !important;
+}
+
+.citation-block .cite-text {
+  font-size: 1rem;
+  color: var(--cd-ink);
+}
+
+.citation-block pre {
+  font-size: 0.78rem;
+  background: var(--cd-wash);
+  border: 1px solid var(--cd-rule);
+  padding: 0.85rem 1rem;
+}
+
+/* Footer */
+.nav-footer {
+  border-top: 1px solid var(--cd-rule);
+  background: var(--cd-paper) !important;
+  color: var(--cd-meta);
+  font-size: 0.85rem;
+  padding-top: 1.1rem;
+  padding-bottom: 1.4rem;
+}
+
+.nav-footer a {
+  color: var(--cd-meta);
+  text-decoration: none;
+}
+
+.nav-footer a:hover {
+  color: var(--cd-ink);
+}
+
+.nav-footer .nav-footer-left,
+.nav-footer .nav-footer-right,
+.nav-footer .nav-footer-center {
+  padding-top: 0.2rem;
+}
+
+/* Dark-mode toggle: keep it quiet */
+.quarto-color-scheme-toggle {
+  opacity: 0.7;
+}
+
+.quarto-color-scheme-toggle:hover {
+  opacity: 1;
+}
+
+/* About / colophon / explorations */
+.identity-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem 0 0;
+}
+
+.identity-list li {
+  margin: 0 0 0.55rem;
+  max-width: 42rem;
+}
+
+.exploration {
+  margin: 1.6rem 0 0;
+  padding: 1.2rem 0 0;
+  border-top: 1px solid var(--cd-rule);
+  min-height: 8rem;
+}
+
+.exploration-fallback {
+  color: var(--cd-meta);
+  font-size: 1.05rem;
+}
+
+.page-columns .page-layout-article {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Hide leftover Bootstrap card / hero residue */
+.hero-banner,
+.quarto-title-overlay,
+.card,
+.card-body {
+  box-shadow: none !important;
+}
+
+@media (max-width: 767.98px) {
+  #quarto-document-content {
+    font-size: 1.2rem;
+  }
+
+  header.quarto-title-block .title,
+  #quarto-document-content h1 {
+    font-size: 1.7rem;
+  }
+}

@@ -1,0 +1,89 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - essays/
+    - notes/
+    - series/
+    - explorations/
+    - "!incoming/"
+  resources:
+    - CNAME
+    - js/**
+    - favicon.svg
+    - essays/bifrost/*.svg
+
+execute:
+  freeze: auto
+
+website:
+  title: Continuous Deformation
+  site-url: https://klogram.dev
+  repo-url: https://github.com/klgraham/klogram
+  description: Notes on machine learning, language, and the systems around them — written slowly.
+  favicon: favicon.svg
+  twitter-card: true
+  open-graph: true
+  page-navigation: false
+  back-to-top-navigation: false
+  bread-crumbs: false
+  search: false
+  image: favicon.svg
+  navbar:
+    title: Continuous Deformation
+    background: body
+    foreground: body
+    collapse-below: sm
+    pinned: true
+    right:
+      - text: Essays
+        href: essays/index.qmd
+      - text: Notes
+        href: notes/index.qmd
+      - text: Series
+        href: series/index.qmd
+      - text: About
+        href: about.qmd
+      - icon: rss
+        href: essays/index.xml
+        aria-label: RSS
+  page-footer:
+    background: body
+    left:
+      - text: Explorations
+        href: explorations/index.qmd
+      - text: Colophon
+        href: colophon.qmd
+    right:
+      - text: klogram
+        href: about.qmd
+
+format:
+  html:
+    theme:
+      light: [litera, styles/light.scss]
+      dark: [litera, styles/dark.scss]
+    css: styles/site.css
+    respect-user-color-scheme: true
+    toc: false
+    code-copy: true
+    code-overflow: wrap
+    html-math-method: katex
+    mermaid:
+      theme: neutral
+    page-layout: article
+    grid:
+      sidebar-width: 0px
+      body-width: 672px
+      margin-width: 180px
+    include-in-header:
+      - file: includes/fonts.html
+    link-external-icon: false
+    link-external-newwindow: false
+    email-obfuscation: none
+    citations-hover: true
+    footnotes-hover: true
+    highlight-style:
+      light: monochrome
+      dark: monochrome
