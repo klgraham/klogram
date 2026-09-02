@@ -1,0 +1,7 @@
+---
+title: Not found
+pagetitle: Not found · Continuous Deformation
+toc: false
+---
+
+That address is not on this site. Start from the [catalog](/) or the [essays](/essays/).

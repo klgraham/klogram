@@ -1,0 +1,53 @@
+/*-- scss:defaults --*/
+$font-family-sans-serif: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif !default;
+$font-family-serif: "Source Serif 4", "Source Serif Pro", "Iowan Old Style", "Palatino Linotype", Palatino, serif !default;
+$font-family-monospace: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace !default;
+$font-family-base: $font-family-serif !default;
+$headings-font-family: $font-family-serif !default;
+
+$body-bg: #161412 !default;
+$body-color: #ece6dc !default;
+$link-color: #8aa0c4 !default;
+$link-hover-color: #ece6dc !default;
+$primary: #8aa0c4 !default;
+$secondary: #a39b92 !default;
+$light: #161412 !default;
+$dark: #ece6dc !default;
+
+$navbar-bg: #161412 !default;
+$navbar-fg: #ece6dc !default;
+$navbar-hl: #8aa0c4 !default;
+$navbar-brand-color: #ece6dc !default;
+$footer-bg: #161412 !default;
+$footer-fg: #a39b92 !default;
+
+$border-color: #3a342e !default;
+$code-color: #ece6dc !default;
+$code-bg: #221e1a !default;
+$pre-bg: #221e1a !default;
+$pre-color: #ece6dc !default;
+
+$enable-rounded: false !default;
+$enable-shadows: false !default;
+$enable-gradients: false !default;
+$border-radius: 0 !default;
+$border-radius-sm: 0 !default;
+$border-radius-lg: 0 !default;
+$box-shadow: none !default;
+$headings-font-weight: 600 !default;
+$headings-color: #ece6dc !default;
+$font-size-base: 1.05rem !default;
+$line-height-base: 1.65 !default;
+$nav-link-font-size: 0.95rem !default;
+$navbar-padding-y: 0.85rem !default;
+
+/*-- scss:rules --*/
+:root {
+  --cd-paper: #161412;
+  --cd-ink: #ece6dc;
+  --cd-meta: #a39b92;
+  --cd-accent: #8aa0c4;
+  --cd-rule: #3a342e;
+  --cd-wash: #221e1a;
+  --cd-code: #ece6dc;
+}

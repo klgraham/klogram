@@ -1,0 +1,44 @@
+---
+pagetitle: Continuous Deformation
+title-block-style: none
+toc: false
+listing:
+  - id: latest-essays
+    contents:
+      - essays/*/index.qmd
+    sort: "date desc"
+    type: default
+    max-items: 8
+    sort-ui: false
+    filter-ui: false
+    categories: false
+    fields: [date, title, description, reading-time, categories]
+    date-format: long
+---
+
+::: {.catalog-lede}
+Notes on machine learning, language, and the systems around them — written slowly.
+:::
+
+<p class="catalog-section-head">Latest essays</p>
+
+::: {.listing-or-empty}
+::: {.empty-state .catalog-empty}
+No essays yet.
+:::
+
+::: {#latest-essays}
+:::
+:::
+
+<p class="catalog-section-head">Notes</p>
+
+::: {.empty-state}
+No notes yet.
+:::
+
+<p class="catalog-section-head">Series</p>
+
+::: {.empty-state}
+Two series are planned.
+:::

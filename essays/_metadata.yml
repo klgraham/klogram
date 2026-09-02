@@ -1,0 +1,15 @@
+author:
+  - name: Ken Graham
+    url: /about.html
+toc: true
+toc-depth: 3
+toc-location: body
+toc-title: Contents
+date-format: long
+reference-location: document
+fig-cap-location: bottom
+tbl-cap-location: top
+code-copy: true
+format:
+  html:
+    page-layout: article
