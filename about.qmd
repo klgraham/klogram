@@ -4,10 +4,10 @@ pagetitle: About · Continuous Deformation
 toc: false
 ---
 
-Ken Graham writes here as **klogram**.
+Ken Graham is an ML engineer at AppFolio in Nashville. Before that he was a principal ML engineer at Digital Reasoning and then Smarsh. He has a Ph.D. in condensed matter physics.
 
-He is an ML engineer at AppFolio, in Nashville. Before that work he trained as a physicist (Ph.D., condensed matter). The notes on this site come out of NLP, agents, causal inference, and the systems that have to hold those things up.
+Since 2009 he has built NLP and ML systems for government and industry, including entity coreference, text classification, active learning, automatic speech recognition, and temporal normalization. Earlier work included Monte Carlo simulation, anomaly detection, cyber security, and behavioral profiling.
 
 He is a co-author of [*Transformers for Machine Learning*](https://www.routledge.com/Transformers-for-Machine-Learning-A-Deep-Dive/Kamath-Graham-Emara/p/book/9780367771652) (Chapman & Hall / CRC, with Uday Kamath and Wael Emara) and [*Applied Causal Inference*](https://appliedcausalinference.github.io/aci_book/) (with Uday Kamath and Mitchell Naylor).
 
-Code lives at [github.com/klgraham](https://github.com/klgraham). The site repository is [klgraham/klogram](https://github.com/klgraham/klogram).
+Code lives at [github.com/klgraham](https://github.com/klgraham).
