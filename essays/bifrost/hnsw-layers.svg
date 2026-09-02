@@ -1,1 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420"></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420" role="img" aria-labelledby="title desc">
+  <title id="title">HNSW layers as Bifrost stores them</title>
+  <desc id="desc">Three graph layers. Upper layers are sparse long-range links. Layer 0 holds every node. A query descends greedily, then expands at layer 0.</desc>
+  <style>
+    .bg { fill: #fafafa; }
+    .label { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 13px; fill: #222; }
+    .small { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 11px; fill: #555; }
+    .layer { fill: #fff; stroke: #ccc; stroke-width: 1; }
+    .edge { stroke: #888; stroke-width: 1.5; fill: none; }
+    .long { stroke: #1f4e79; stroke-width: 2; }
+    .node { fill: #fff; stroke: #333; stroke-width: 1.5; }
+    .entry { fill: #1f4e79; stroke: #1f4e79; }
+    .query { fill: #c0392b; stroke: #c0392b; }
+    .path { stroke: #c0392b; stroke-width: 2.5; fill: none; stroke-dasharray: 5 3; }
+  </style>
+  <rect class="bg" width="760" height="420"/>
+
+  <rect class="layer" x="40" y="28" width="520" height="90" rx="6"/>
+  <rect class="layer" x="40" y="148" width="520" height="100" rx="6"/>
+  <rect class="layer" x="40" y="278" width="520" height="110" rx="6"/>
+
+  <text class="label" x="52" y="48">layer 2 (entry)</text>
+  <text class="small" x="52" y="64">few nodes, long-range edges</text>
+  <text class="label" x="52" y="168">layer 1</text>
+  <text class="small" x="52" y="184">subset of nodes, still navigable</text>
+  <text class="label" x="52" y="298">layer 0</text>
+  <text class="small" x="52" y="314">every inserted vector lives here</text>
+
+  <!-- layer 2 nodes -->
+  <line class="long" x1="180" y1="88" x2="420" y2="88"/>
+  <circle class="node entry" cx="180" cy="88" r="8"/>
+  <circle class="node" cx="420" cy="88" r="8"/>
+
+  <!-- layer 1 nodes -->
+  <line class="edge" x1="160" y1="218" x2="280" y2="218"/>
+  <line class="edge" x1="280" y1="218" x2="400" y2="218"/>
+  <line class="long" x1="160" y1="218" x2="400" y2="218"/>
+  <circle class="node entry" cx="160" cy="218" r="8"/>
+  <circle class="node" cx="280" cy="218" r="8"/>
+  <circle class="node" cx="400" cy="218" r="8"/>
+
+  <!-- layer 0 nodes -->
+  <line class="edge" x1="120" y1="354" x2="200" y2="354"/>
+  <line class="edge" x1="200" y1="354" x2="280" y2="354"/>
+  <line class="edge" x1="280" y1="354" x2="360" y2="354"/>
+  <line class="edge" x1="360" y1="354" x2="440" y2="354"/>
+  <line class="edge" x1="440" y1="354" x2="520" y2="354"/>
+  <line class="edge" x1="200" y1="354" x2="360" y2="338"/>
+  <circle class="node" cx="120" cy="354" r="7"/>
+  <circle class="node entry" cx="200" cy="354" r="7"/>
+  <circle class="node" cx="280" cy="354" r="7"/>
+  <circle class="node" cx="360" cy="354" r="7"/>
+  <circle class="node" cx="440" cy="354" r="7"/>
+  <circle class="node" cx="520" cy="354" r="7"/>
+
+  <!-- descent path -->
+  <path class="path" d="M180,88 L160,218 L200,354 L280,354"/>
+  <circle class="query" cx="300" cy="354" r="5"/>
+
+  <text class="small" x="580" y="80">entry node</text>
+  <circle class="node entry" cx="568" cy="76" r="7"/>
+  <text class="small" x="580" y="108">other node</text>
+  <circle class="node" cx="568" cy="104" r="7"/>
+  <text class="small" x="580" y="136">query (not a node)</text>
+  <circle class="query" cx="568" cy="132" r="5"/>
+  <text class="small" x="580" y="168">greedy descent, then</text>
+  <text class="small" x="580" y="184">ef-wide walk on layer 0</text>
+</svg>
