@@ -153,6 +153,11 @@ main.content,
   display: none;
 }
 
+.listing-or-empty:not(:has(.listing-item)) .quarto-listing,
+.listing-no-matching {
+  display: none;
+}
+
 /* Kill stock listing chrome */
 .listing-actions-group,
 .quarto-listing-sort,

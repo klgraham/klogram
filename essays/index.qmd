@@ -1,6 +1,7 @@
 ---
 title: Essays
 pagetitle: Essays · Continuous Deformation
+author: false
 toc: false
 listing:
   id: essays
@@ -10,7 +11,7 @@ listing:
   type: default
   sort-ui: false
   filter-ui: false
-  categories: numbered
+  categories: false
   fields: [date, title, description, reading-time, categories]
   date-format: long
   feed:
