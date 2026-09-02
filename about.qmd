@@ -4,11 +4,11 @@ pagetitle: About · Continuous Deformation
 toc: false
 ---
 
-Ken Graham is an ML engineer at AppFolio in Nashville. Before that he was a principal ML engineer at Digital Reasoning and then Smarsh. He has a Ph.D. in condensed matter physics.
+Ken Graham is an ML engineer at AppFolio, focusing on agentic AI for the AppFolio Performance Platform. Before that he was an ML engineer at Digital Reasoning and then Smarsh. He has a Ph.D. in physics.
+
+Since 2009 he has built NLP and ML systems for the public and private sector, including entity coreference resolution, text classification, active learning, automatic speech recognition, temporal normalization, anomaly detection, and behavioral profiling. He was also part of the small team that built the initial version of [Spotlight](https://www.spotlight.ngo/) with the [Thorn Foundation](https://www.thorn.org/blog/a-new-chapter-for-spotlight-and-thorns-continued-commitment-to-child-safety/).
 
 Current interests are efficient AI inference, local AI, and agent memory systems.
-
-Since 2009 he has built NLP and ML systems for government and industry, including entity coreference, text classification, active learning, automatic speech recognition, and temporal normalization. Earlier work included Monte Carlo simulation, anomaly detection, cyber security, and behavioral profiling.
 
 He is a co-author of [*Transformers for Machine Learning*](https://www.routledge.com/Transformers-for-Machine-Learning-A-Deep-Dive/Kamath-Graham-Emara/p/book/9780367771652) (Chapman & Hall / CRC, with Uday Kamath and Wael Emara) and [*Applied Causal Inference*](https://appliedcausalinference.github.io/aci_book/) (with Uday Kamath and Mitchell Naylor).
 
