@@ -22,7 +22,13 @@ Notes on machine learning, language, and the systems around them — written slo
 
 <p class="catalog-section-head">Latest essays</p>
 
+::: {.listing-or-empty}
+::: {.empty-state .catalog-empty}
+No essays yet.
+:::
+
 ::: {#latest-essays}
+:::
 :::
 
 <p class="catalog-section-head">Notes</p>

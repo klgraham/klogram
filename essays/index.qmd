@@ -19,7 +19,13 @@ listing:
     description: "Essays from Continuous Deformation."
 ---
 
-Longer pieces. The first is on approximate nearest-neighbor search as implemented in Bifrost.
+Longer pieces, when they are ready.
+
+::: {.listing-or-empty}
+::: {.empty-state .catalog-empty}
+No essays yet.
+:::
 
 ::: {#essays}
+:::
 :::

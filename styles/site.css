@@ -149,6 +149,10 @@ main.content,
   margin: 0 0 0.4rem;
 }
 
+.listing-or-empty:has(.listing-item) .catalog-empty {
+  display: none;
+}
+
 /* Kill stock listing chrome */
 .listing-actions-group,
 .quarto-listing-sort,
